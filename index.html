@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#2c1810" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <!-- SEO -->
+    <title>WordPath — Daily Word Chain Puzzle</title>
+    <meta name="description" content="Navigate to the hidden word by changing one letter at a time. A new puzzle every day." />
+    <meta property="og:title" content="WordPath — Daily Word Chain Puzzle" />
+    <meta property="og:description" content="Can you find the hidden word? Change one letter at a time. New puzzle daily." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://wordpath.app" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="WordPath — Daily Word Chain Puzzle" />
+    <meta name="twitter:description" content="Navigate to the hidden word. Change one letter at a time. New puzzle daily." />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // Register service worker for offline play
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/sw.js").catch(() => {});
+        });
+      }
+    </script>
+  </body>
+</html>
