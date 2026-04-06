@@ -128,7 +128,7 @@ export default function Game({ puzzle }) {
     startFB.map(f => emojiMap[f]).join(""),
     ...guesses.map(g => g.feedback.map(f => emojiMap[f]).join(""))
   ].join("\n");
-  const shareText = `WordPath #${idx + 1} ${solved ? `${guesses.length}/${maxGuesses}` : "X/" + maxGuesses}\n${hint}\n\n${shareRows}\n\nwordpath.app`;
+  const shareText = `WordPath #${idx + 1} ${solved ? `${guesses.length}/${maxGuesses}` : "X/" + maxGuesses}\n${hint}\n\n${shareRows}\n\nwordpath-gilt.vercel.app`;
 
   return (
     <div>
